@@ -1,0 +1,28 @@
+body {
+  padding-bottom: 2rem;
+}
+
+.navbar {
+  background-color: rgb(238, 238, 238);
+}
+
+.navbar-brand {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.fg-nav-input {
+  float: right;
+  padding-right: 20px;
+  padding-top: 9px;
+  text-align: right;
+}
+
+.fg-nav-btn {
+  color: white;
+  background-color: #337ab7;
+}
+
+.priority {
+  background-color: #ffb2b2;
+}

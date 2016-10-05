@@ -1,0 +1,27 @@
+{% extends 'tasks/base.html' %}
+
+
+{% block content %}
+      <div class="row">
+        <div class="col-md-8">
+
+
+        <ul class="list-group">
+
+
+          {% for item in object_list %}
+
+              <li class="list-group-item"><b>{{ item }}</b>
+                {{ item.details }} (for <a href="{% url 'single_office' pk=item.for_office.pk %}">{{ item.for_office }}</a>) <span class="badge"> {{ item.quantity }} needed</span>
+              </li>
+
+          {% endfor %}
+
+        </ul>
+
+
+        </div>
+
+      </div>
+
+{% endblock content %}
