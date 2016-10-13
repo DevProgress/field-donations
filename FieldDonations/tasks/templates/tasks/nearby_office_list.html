@@ -16,7 +16,8 @@
 
                 {% for item in office.office.item_set.all %}
                     <li class="list-group-item">
-                      <b>{{ item }}</b> {{ item.details }}
+                      <a href="{% url 'item' pk=item.id %}"><b>{{ item }}</b></a>
+                      {{ item.details|truncatechars:70 }}
                       <span class="badge"> {{ item.quantity }} Needed </span>
                       {% if item.high_priority %} <span class="badge priority"> High Priority </span> {% endif %}
 

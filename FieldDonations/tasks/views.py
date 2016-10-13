@@ -33,6 +33,10 @@ class SingleOfficeView(generic.DetailView):
     template_name = 'tasks/single_office.html'
     model = FieldOffice
 
+class ItemDetailView(generic.DetailView):
+    template_name = 'tasks/item_detail.html'
+    model = Item
+
 class ItemView(generic.ListView):
     template_name = 'tasks/item_list.html'
 

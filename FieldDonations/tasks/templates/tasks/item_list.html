@@ -12,7 +12,7 @@
           {% for item in object_list %}
 
               <li class="list-group-item"><b>{{ item }}</b>
-                {{ item.details }} (for <a href="{% url 'single_office' pk=item.for_office.pk %}">{{ item.for_office }}</a>)
+                {{ item.details|truncatechars:70 }} (for <a href="{% url 'single_office' pk=item.for_office.pk %}">{{ item.for_office }}</a>)
                 <span class="badge"> {{ item.quantity }} needed</span>
                 {% if item.high_priority %} <span class="badge priority"> High Priority </span> {% endif %}
               </li>

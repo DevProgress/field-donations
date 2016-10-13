@@ -1,0 +1,19 @@
+{% extends 'tasks/base.html' %}
+
+
+{% block content %}
+      <div class="row">
+        <div class="col-md-8">
+
+          <h3>{{ object }}</h3>
+          <h4>For office: {{ object.for_office }}</h4>
+          <h4><span class="badge"> {{ object.quantity }} needed</span>
+          {% if object.high_priority %} <span class="badge priority"> High Priority </span> {% endif %}</h4>
+
+          {{ object.details }}
+
+        </div>
+
+      </div>
+
+{% endblock content %}
