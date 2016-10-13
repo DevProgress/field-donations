@@ -21,10 +21,12 @@ class NearbyOfficeView(generic.ListView):
         lon = self.kwargs.get('lon', None)
         limit = self.kwargs.get('limit', 25)
         if lat and lon:
+            your_location = get_address(lat, lon)
             context['nearby_office_list'] = return_within_limit(lat, lon, limit)
             if context['nearby_office_list'] == []:
-                your_location = get_address(lat, lon)
-                context['error_string'] = "There are no field offices within " + str(limit) + " miles of " + your_location + "."
+                context['message_string'] = "There are no field offices within " + str(limit) + " miles of " + your_location + "."
+            else:
+                context['message_string'] = "Field offices within " + str(limit) + " miles of " +  your_location + "."
         return context
 
 class SingleOfficeView(generic.DetailView):
