@@ -62,7 +62,7 @@
       user_limit = document.getElementById("fg-limit").value;
 
       $.ajax({
-          url: "http://127.0.0.1:8000/tasks/search-field-offices",
+          url: "http://127.0.0.1:8000/search-field-offices",
           data: { "location": user_location, "limit": user_limit },
           cache: false,
           type: "GET",
