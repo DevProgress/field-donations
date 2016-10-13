@@ -15,6 +15,8 @@
               <ul class="list-group">
 
                 {% for item in office.office.item_set.all %}
+
+                    {% if not item.filled %}
                     <li class="list-group-item">
                       <a href="{% url 'item' pk=item.id %}"><b>{{ item }}</b></a>
                       {{ item.details|truncatechars:70 }}
@@ -22,6 +24,8 @@
                       {% if item.high_priority %} <span class="badge priority"> High Priority </span> {% endif %}
 
                     </li>
+                    {% endif %}
+
                 {% endfor %}
 
               </ul>
