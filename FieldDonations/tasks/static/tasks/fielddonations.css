@@ -1,13 +1,27 @@
 body {
   padding-bottom: 2rem;
+  font-family: 'Merriweather', serif;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
 }
 
 .navbar {
-  background-color: rgb(238, 238, 238);
+  background-color: #658da7;
+}
+
+.navbar button, .navbar button:hover, .navbar button:active {
+  background-color: #ca0404;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar a {
+    color: white;
 }
 
 .navbar-brand {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -24,5 +38,13 @@ body {
 }
 
 .priority {
-  background-color: #ffb2b2;
+  background-color: #ca0404;
+}
+
+.office {
+  margin-bottom: 50px;
+}
+
+.office-name {
+  color: #8f0304;
 }

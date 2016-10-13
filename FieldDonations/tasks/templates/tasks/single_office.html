@@ -5,13 +5,16 @@
       <div class="row">
         <div class="col-md-8">
 
-              <h1>{{ object.name }}</h2>
+              <h1 class="office-name">{{ object.name }}</h2>
               <h2>{{ object.address }}</h2>
 
               <ul class="list-group">
 
                 {% for item in object.item_set.all %}
-                    <li class="list-group-item"><b>{{ item }}</b> {{ item.details }} <span class="badge"> {{ item.quantity }} needed</span></li>
+                    <li class="list-group-item"><b>{{ item }}</b> {{ item.details }}
+                      <span class="badge"> {{ item.quantity }} needed</span>
+                      {% if item.high_priority %} <span class="badge priority"> High Priority </span> {% endif %}
+                    </li>
                 {% endfor %}
 
               </ul>

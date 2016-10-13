@@ -31,7 +31,7 @@ def return_within_limit(ulat, ulong, limit):
         for fo in FieldOffice.objects.all():
             distance = great_circle(user_loc, (fo.latitude, fo.longitude)).miles
             if distance < float(limit):
-                field_office_list.append({'office': fo, 'distance': distance})
+                field_office_list.append({'office': fo, 'distance': "%.2f" % (distance)})
     except:
         pass
     return field_office_list
