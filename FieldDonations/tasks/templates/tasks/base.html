@@ -67,7 +67,11 @@
           cache: false,
           type: "GET",
           success: function(response) {
-            window.location.href = response.url
+            if (response.status == "success") {
+              window.location.href = response.url;
+            } else {
+              confirm(response.message);
+            }
           },
           error: function(xhr) {
             confirm(xhr.responseText);

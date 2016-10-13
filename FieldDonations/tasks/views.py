@@ -45,6 +45,6 @@ def SearchFieldOfficeView(request):
     resp = verify_input(location, limit)
     if resp:
         url = reverse('nearby', kwargs={'lat': resp['lat'], 'lon': resp['lon'], 'limit': resp['limit']})
-        return JsonResponse({'url': url})
+        return JsonResponse({'status': 'success', 'url': url})
     else:
-        return JsonResponse({'message':"I'm sorry, that address/zip code/city was not recognized."})
+        return JsonResponse({'status': 'error', 'message':"I'm sorry, that address/zip code/city was not recognized."})

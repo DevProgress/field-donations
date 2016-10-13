@@ -15,8 +15,11 @@ def get_address(lat, lon):
 def verify_input(location, limit):
     geolocator = Nominatim()
     coords = geolocator.geocode(location)
-    if coords.latitude and coords.longitude:
-        limit = int(limit) if int(limit) > 0 else 25
+    if coords and coords.latitude and coords.longitude:
+        try:
+            limit = int(limit)
+        except:
+            limit = 25
         return {'lat': coords.latitude, 'lon': coords.longitude, 'limit': limit}
     else:
         return False
